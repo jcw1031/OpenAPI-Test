@@ -5,14 +5,10 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class ElevatorInfo {
+public class ResultInfo {
 
-    @JsonAlias("RESULT")
-    private ResultInfo resultInfo;
-    @JsonAlias("row")
-    private List<Elevator> elevators;
+    @JsonAlias("CODE")
+    private String resultCode;
 }
