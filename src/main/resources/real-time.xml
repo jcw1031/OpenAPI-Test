@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<realtimeStationArrival>
+    <RESULT>
+        <code>INFO-000</code>
+        <developerMessage></developerMessage>
+        <link></link>
+        <message>정상 처리되었습니다.</message>
+        <status>200</status>
+        <total>19</total>
+    </RESULT>
+    <row>
+        <rowNum>1</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>19</totalCount>
+        <subwayId>1001</subwayId>
+        <updnLine>상행</updnLine>
+        <trainLineNm>광운대행 - 시청방면</trainLineNm>
+        <statnFid>1001000134</statnFid>
+        <statnTid>1001000132</statnTid>
+        <statnId>1001000133</statnId>
+        <statnNm>서울</statnNm>
+        <ordkey>01000광운대0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <barvlDt>0</barvlDt>
+        <btrainNo>0474</btrainNo>
+        <bstatnId>171</bstatnId>
+        <bstatnNm>광운대</bstatnNm>
+        <recptnDt>2023-05-20 19:18:29</recptnDt>
+        <arvlMsg2>서울 도착</arvlMsg2>
+        <arvlMsg3>서울</arvlMsg3>
+        <arvlCd>1</arvlCd>
+    </row>
+    <row>
+        <rowNum>2</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>19</totalCount>
+        <subwayId>1065</subwayId>
+        <updnLine>상행</updnLine>
+        <trainLineNm>인천공항2터미널행 - 공덕방면</trainLineNm>
+        <statnFid>1065006502</statnFid>
+        <statnTid>1065006501</statnTid>
+        <statnId>1065006501</statnId>
+        <statnNm>서울</statnNm>
+        <ordkey>01000인천공항2터미널0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <barvlDt>0</barvlDt>
+        <btrainNo>A2145</btrainNo>
+        <bstatnId>110</bstatnId>
+        <bstatnNm>인천공항2터미널</bstatnNm>
+        <recptnDt>2023-05-20 19:16:40</recptnDt>
+        <arvlMsg2>서울 출발</arvlMsg2>
+        <arvlMsg3>서울</arvlMsg3>
+        <arvlCd>2</arvlCd>
+    </row>
+    <row>
+        <rowNum>3</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>19</totalCount>
+        <subwayId>1004</subwayId>
+        <updnLine>상행</updnLine>
+        <trainLineNm>당고개행 - 회현방면</trainLineNm>
+        <statnFid>1004000427</statnFid>
+        <statnTid>1004000425</statnTid>
+        <statnId>1004000426</statnId>
+        <statnNm>서울</statnNm>
+        <ordkey>01002당고개0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <barvlDt>208</barvlDt>
+        <btrainNo>4332</btrainNo>
+        <bstatnId>0</bstatnId>
+        <bstatnNm>당고개</bstatnNm>
+        <recptnDt>2023-05-20 19:18:05</recptnDt>
+        <arvlMsg2>3분 28초 후 (삼각지)</arvlMsg2>
+        <arvlMsg3>삼각지</arvlMsg3>
+        <arvlCd>99</arvlCd>
+    </row>
+    <row>
+        <rowNum>4</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>19</totalCount>
+        <subwayId>1001</subwayId>
+        <updnLine>상행</updnLine>
+        <trainLineNm>청량리행 - 시청방면</trainLineNm>
+        <statnFid>1001000134</statnFid>
+        <statnTid>1001000132</statnTid>
+        <statnId>1001000133</statnId>
+        <statnNm>서울</statnNm>
+        <ordkey>01024청량리</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <barvlDt>0</barvlDt>
+        <btrainNo>1944</btrainNo>
+        <bstatnId>249</bstatnId>
+        <bstatnNm>청량리</bstatnNm>
+        <recptnDt>2023-05-20 19:18:24</recptnDt>
+        <arvlMsg2>[24]번째 전역 (병점)</arvlMsg2>
+        <arvlMsg3>병점</arvlMsg3>
+        <arvlCd>99</arvlCd>
+    </row>
+    <row>
+        <rowNum>5</rowNum>
+        <selectedCount>5</selectedCount>
+        <totalCount>19</totalCount>
+        <subwayId>1001</subwayId>
+        <updnLine>상행</updnLine>
+        <trainLineNm>청량리행 - 시청방면</trainLineNm>
+        <statnFid>1001000134</statnFid>
+        <statnTid>1001000132</statnTid>
+        <statnId>1001000133</statnId>
+        <statnNm>서울</statnNm>
+        <ordkey>02001청량리0</ordkey>
+        <subwayList>1001,1004,1063,1065</subwayList>
+        <statnList>1001000133,1004000426,1063080313,1065006501</statnList>
+        <barvlDt>180</barvlDt>
+        <btrainNo>1942</btrainNo>
+        <bstatnId>171</bstatnId>
+        <bstatnNm>청량리</bstatnNm>
+        <recptnDt>2023-05-20 19:18:29</recptnDt>
+        <arvlMsg2>전역 도착</arvlMsg2>
+        <arvlMsg3>남영</arvlMsg3>
+        <arvlCd>5</arvlCd>
+    </row>
+</realtimeStationArrival>
