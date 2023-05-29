@@ -1,4 +1,4 @@
-package team.free.openapitest;
+package team.free.openapitest.test;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AccessLevel;

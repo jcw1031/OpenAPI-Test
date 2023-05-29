@@ -1,0 +1,410 @@
+[
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "201",
+    "STIN_NM": "시청"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "202",
+    "STIN_NM": "을지로입구"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "203",
+    "STIN_NM": "을지로3가"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "204",
+    "STIN_NM": "을지로4가"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "205",
+    "STIN_NM": "동대문역사문화공원"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "206",
+    "STIN_NM": "신당"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "207",
+    "STIN_NM": "상왕십리"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "208",
+    "STIN_NM": "왕십리"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "209",
+    "STIN_NM": "한양대"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "210",
+    "STIN_NM": "뚝섬"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "211",
+    "STIN_NM": "성수"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "212",
+    "STIN_NM": "건대입구"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "213",
+    "STIN_NM": "구의(광진구청)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "214",
+    "STIN_NM": "강변(동서울터미널)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "215",
+    "STIN_NM": "잠실나루"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "216",
+    "STIN_NM": "잠실(송파구청)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "217",
+    "STIN_NM": "잠실새내"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "218",
+    "STIN_NM": "종합운동장"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "219",
+    "STIN_NM": "삼성(무역센터)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "220",
+    "STIN_NM": "선릉"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "221",
+    "STIN_NM": "역삼"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "222",
+    "STIN_NM": "강남"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "223",
+    "STIN_NM": "교대(법원·검찰청)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "224",
+    "STIN_NM": "서초"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "225",
+    "STIN_NM": "방배"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "226",
+    "STIN_NM": "사당"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "227",
+    "STIN_NM": "낙성대"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "228",
+    "STIN_NM": "서울대입구(관악구청)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "229",
+    "STIN_NM": "봉천"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "230",
+    "STIN_NM": "신림"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "231",
+    "STIN_NM": "신대방"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "232",
+    "STIN_NM": "구로디지털단지"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "233",
+    "STIN_NM": "대림(구로구청)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "234",
+    "STIN_NM": "신도림"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "234-4",
+    "STIN_NM": "까치산"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "235",
+    "STIN_NM": "문래"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "236",
+    "STIN_NM": "영등포구청"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "237",
+    "STIN_NM": "당산"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "238",
+    "STIN_NM": "합정"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "239",
+    "STIN_NM": "홍대입구"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "240",
+    "STIN_NM": "신촌"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "241",
+    "STIN_NM": "이대"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "242",
+    "STIN_NM": "아현"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "243",
+    "STIN_NM": "충정로(경기대입구)"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "244",
+    "STIN_NM": "용답"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "245",
+    "STIN_NM": "신답"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "246",
+    "STIN_NM": "신설동"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "247",
+    "STIN_NM": "도림천"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "248",
+    "STIN_NM": "양천구청"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "249",
+    "STIN_NM": "신정네거리"
+  },
+  {
+    "RAIL_OPR_ISTT_CD": "S1",
+    "RAIL_OPR_ISTT_NM": "서울교통공사",
+    "LN_CD": "2",
+    "LN_NM": "2호선",
+    "STIN_CD": "250",
+    "STIN_NM": "용두(동대문구청)"
+  }
+]
