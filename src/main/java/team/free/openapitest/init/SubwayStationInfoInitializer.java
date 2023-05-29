@@ -33,7 +33,6 @@ public class SubwayStationInfoInitializer {
     public void initializeSubwayStationTable() throws IOException {
         Sheet sheet = excelReader.readSheet("/Users/jcw/only2.xlsx");
         int lastRowNum = sheet.getLastRowNum();
-        log.info("lastRowNum = {}", lastRowNum);
 
         for (int i = 1; i <= lastRowNum; i++) {
             Row row = sheet.getRow(i);
@@ -41,18 +40,17 @@ public class SubwayStationInfoInitializer {
             String stationId = row.getCell(STATION_ID_INDEX).toString();
             String stationName = row.getCell(STATION_NAME_INDEX).toString();
             if (stationName.contains("(")) {
-                stationName = gePureName(stationName);
+                stationName = getPureName(stationName);
             }
 
-            StationLocation stationLocation =
-                    kakaoAPIManager.getStationLocationInfo(stationName, lineName);
+            StationLocation stationLocation = kakaoAPIManager.getStationLocationInfo(stationName, lineName);
 
             SubwayStation subwayStation = SubwayStation.of(stationId, stationName, lineName, stationLocation);
             stationRepository.save(subwayStation);
         }
     }
 
-    private static String gePureName(String stationName) {
+    private static String getPureName(String stationName) {
         int index = stationName.indexOf("(");
         stationName = stationName.substring(0, index);
         return stationName;

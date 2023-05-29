@@ -13,6 +13,7 @@ import team.free.openapitest.dto.StationLocationDto;
 
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @Slf4j
 @Component
@@ -35,7 +36,14 @@ public class KakaoAPIManager {
         StationLocationDto stationLocationDto = restTemplate.exchange(request, StationLocationDto.class).getBody();
 
         assert stationLocationDto != null;
-        return stationLocationDto.getStationLocationList().get(0);
+        List<StationLocation> stationLocationList = stationLocationDto.getStationLocationList();
+        for (StationLocation stationLocation : stationLocationList) {
+            if (stationLocation.getName().startsWith(stationName + "역")) {
+                return stationLocation;
+            }
+        }
+
+        return null;
     }
 
     private URI generateURI(String stationName, String lineName, String url) {

@@ -15,8 +15,6 @@ public class ExcelReader {
         FileInputStream file = new FileInputStream(filePath);
         Workbook workbook = new XSSFWorkbook(file);
 
-        Sheet sheet = workbook.getSheetAt(0);
-        System.out.println("sheet = " + sheet);
-        return sheet;
+        return workbook.getSheetAt(0);
     }
 }

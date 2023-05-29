@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class StationLocation {
 
+    @JsonAlias("place_name")
+    private String name;
     @JsonAlias("y")
     private String latitude;
     @JsonAlias("x")
