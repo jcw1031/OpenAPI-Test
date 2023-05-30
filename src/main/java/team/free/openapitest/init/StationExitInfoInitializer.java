@@ -27,7 +27,6 @@ public class StationExitInfoInitializer {
             String stationName = station.getName();
             String lineName = station.getLineName();
 
-            kakaoAPIManager.
         }
     }
 }

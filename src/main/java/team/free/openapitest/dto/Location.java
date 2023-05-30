@@ -17,4 +17,9 @@ public class Location {
     private String longitude;
     @JsonAlias("address_name")
     private String address;
+
+    @Override
+    public String toString() {
+        return "name = " + name;
+    }
 }
