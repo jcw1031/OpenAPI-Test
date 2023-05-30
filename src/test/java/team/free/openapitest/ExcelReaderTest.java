@@ -4,7 +4,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.junit.jupiter.api.Test;
-import team.free.openapitest.init.ExcelReader;
+import team.free.openapitest.util.ExcelReader;
 
 class ExcelReaderTest {
 
