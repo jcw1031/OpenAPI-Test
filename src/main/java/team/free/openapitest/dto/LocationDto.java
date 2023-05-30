@@ -9,8 +9,8 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class StationLocationDto {
+public class LocationDto {
 
     @JsonAlias("documents")
-    private List<StationLocation> stationLocationList;
+    private List<Location> locations;
 }

@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.apache.poi.ss.usermodel.Row;
-import team.free.openapitest.dto.StationLocation;
+import team.free.openapitest.dto.Location;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -61,7 +61,7 @@ public class SubwayStation {
         this.address = address;
     }
 
-    public static SubwayStation of(String stationName, Row row, StationLocation stationLocation) {
+    public static SubwayStation of(String stationName, Row row, Location location) {
         String stationId = row.getCell(STATION_ID_INDEX).toString();
         String lineId = row.getCell(LINE_ID_INDEX).toString();
         String lineName = row.getCell(LINE_NAME_INDEX).toString();
@@ -71,10 +71,10 @@ public class SubwayStation {
                 .name(stationName)
                 .lineId(lineId)
                 .lineName(lineName)
-                .latitude(stationLocation.getLatitude())
-                .longitude(stationLocation.getLongitude())
+                .latitude(location.getLatitude())
+                .longitude(location.getLongitude())
                 .operatingInstitution(operatingInstitution)
-                .address(stationLocation.getAddress())
+                .address(location.getAddress())
                 .build();
     }
 }

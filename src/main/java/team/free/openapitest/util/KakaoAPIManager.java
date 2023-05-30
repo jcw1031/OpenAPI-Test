@@ -8,8 +8,8 @@ import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-import team.free.openapitest.dto.StationLocation;
-import team.free.openapitest.dto.StationLocationDto;
+import team.free.openapitest.dto.Location;
+import team.free.openapitest.dto.LocationDto;
 
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -27,19 +27,19 @@ public class KakaoAPIManager {
     @Value("${kakao.key}")
     private String kakaoAPIKey;
 
-    public StationLocation getStationLocationInfo(String stationName, String lineName) {
+    public Location getStationLocationInfo(String stationName, String lineName) {
         String url = KAKAO_API_PREFIX + "/v2/local/search/keyword.json";
         HttpHeaders headers = generateHeader();
         URI uri = generateURI(stationName, lineName, url);
 
         RequestEntity<Void> request = new RequestEntity<>(headers, HttpMethod.GET, uri);
-        StationLocationDto stationLocationDto = restTemplate.exchange(request, StationLocationDto.class).getBody();
+        LocationDto locationDto = restTemplate.exchange(request, LocationDto.class).getBody();
 
-        assert stationLocationDto != null;
-        List<StationLocation> stationLocationList = stationLocationDto.getStationLocationList();
-        for (StationLocation stationLocation : stationLocationList) {
-            if (stationLocation.getName().startsWith(stationName + "역")) {
-                return stationLocation;
+        assert locationDto != null;
+        List<Location> locations = locationDto.getLocations();
+        for (Location location : locations) {
+            if (location.getName().startsWith(stationName + "역")) {
+                return location;
             }
         }
 

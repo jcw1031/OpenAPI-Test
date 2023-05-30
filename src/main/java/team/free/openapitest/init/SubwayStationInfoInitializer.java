@@ -6,7 +6,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.stereotype.Component;
 import team.free.openapitest.domain.SubwayStation;
-import team.free.openapitest.dto.StationLocation;
+import team.free.openapitest.dto.Location;
 import team.free.openapitest.repository.SubwayStationRepository;
 import team.free.openapitest.util.ExcelReader;
 import team.free.openapitest.util.KakaoAPIManager;
@@ -45,9 +45,9 @@ public class SubwayStationInfoInitializer {
                 stationName = getPureName(stationName);
             }
 
-            StationLocation stationLocation = kakaoAPIManager.getStationLocationInfo(stationName, lineName);
+            Location location = kakaoAPIManager.getStationLocationInfo(stationName, lineName);
 
-            SubwayStation subwayStation = SubwayStation.of(stationName, row, stationLocation);
+            SubwayStation subwayStation = SubwayStation.of(stationName, row, location);
             stationRepository.save(subwayStation);
         }
     }
