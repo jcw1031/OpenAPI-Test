@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS elevator
     elevator_id        INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
     elevator_latitude  VARCHAR(20) NOT NULL,
     elevator_longitude VARCHAR(20) NOT NULL,
-    available          BOOLEAN     NOT NULL,
+    elevator_status    VARCHAR(10),
     description        VARCHAR(50),
     station_id         VARCHAR(6)  NOT NULL,
     FOREIGN KEY (station_id) REFERENCES station (station_id),

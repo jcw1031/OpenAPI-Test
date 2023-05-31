@@ -8,6 +8,8 @@ import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,8 +39,9 @@ public class Elevator {
     @Column(name = "elevator_longitude", nullable = false)
     private String longitude;
 
-    @Column(name = "available")
-    private boolean isAvailable;
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "elevator_status")
+    private ElevatorStatus status;
 
     @Column(name = "description")
     private String description;
@@ -48,10 +51,10 @@ public class Elevator {
     private SubwayStation station;
 
     @Builder
-    public Elevator(String latitude, String longitude, boolean isAvailable, String description) {
+    public Elevator(String latitude, String longitude, ElevatorStatus status, String description) {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.isAvailable = isAvailable;
+        this.status = status;
         this.description = description;
     }
 

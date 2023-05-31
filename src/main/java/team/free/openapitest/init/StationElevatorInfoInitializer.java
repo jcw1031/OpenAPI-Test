@@ -22,8 +22,8 @@ public class StationElevatorInfoInitializer {
     private static final int ELEVATOR_COORDINATE_INDEX = 1;
     private static final int STATION_NAME_INDEX = 9;
     private static final int VALUE_INDEX = 1;
-    private static final int LATITUDE_INDEX = 0;
-    private static final int LONGITUDE_INDEX = 1;
+    private static final int LATITUDE_INDEX = 1;
+    private static final int LONGITUDE_INDEX = 0;
 
     private final SeoulOpenAPIManager seoulOpenAPIManager;
     private final SubwayStationRepository stationRepository;
@@ -45,18 +45,27 @@ public class StationElevatorInfoInitializer {
             }
 
             String name = stationName[VALUE_INDEX];
+            if (name.contains("(")) {
+                name = getPureName(name);
+            }
+
             String elevatorCoordinate = elevatorInfo[ELEVATOR_COORDINATE_INDEX].split(":")[VALUE_INDEX];
             String[] coordinate = getPureCoordinate(elevatorCoordinate);
             if (validStationName(station, name) && validDistance(station, coordinate)) {
                 Elevator elevator = Elevator.builder()
                         .latitude(coordinate[LATITUDE_INDEX])
                         .longitude(coordinate[LONGITUDE_INDEX])
-                        .isAvailable(true)
                         .build();
                 elevator.setStation(station);
                 elevatorRepository.save(elevator);
             }
         }
+    }
+
+    private static String getPureName(String stationName) {
+        int index = stationName.indexOf("(");
+        stationName = stationName.substring(0, index);
+        return stationName;
     }
 
     private String[] getPureCoordinate(String elevatorCoordinate) {
@@ -65,11 +74,7 @@ public class StationElevatorInfoInitializer {
     }
 
     private boolean validStationName(SubwayStation station, String stationName) {
-        if (stationName.isBlank() || !stationName.contains(station.getName())) {
-            return true;
-        }
-
-        return false;
+        return !stationName.isBlank() && stationName.equals(station.getName());
     }
 
     private boolean validDistance(SubwayStation station, String[] coordinate) {
@@ -78,6 +83,6 @@ public class StationElevatorInfoInitializer {
                 Double.parseDouble(coordinate[LATITUDE_INDEX]), Double.parseDouble(coordinate[LONGITUDE_INDEX])
         );
 
-        return !(distance >= 500);
+        return (distance < 500);
     }
 }
