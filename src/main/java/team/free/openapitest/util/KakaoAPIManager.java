@@ -61,13 +61,12 @@ public class KakaoAPIManager {
             }
 
             Location location = locations.get(0);
-            if (isSimilarWithKeyword(location.getName(), stationName, exitNumber)) {
-                exits.add(location);
-                exitNumber++;
-                continue;
+            if (!isSimilarWithKeyword(location.getName(), stationName, exitNumber)) {
+                break;
             }
-
-            break;
+            
+            exits.add(location);
+            exitNumber++;
         }
 
         return exits;

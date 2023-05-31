@@ -7,10 +7,14 @@ import lombok.NoArgsConstructor;
 import org.apache.poi.ss.usermodel.Row;
 import team.free.openapitest.dto.Location;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import java.util.List;
 
 import static team.free.openapitest.init.SubwayStationInfoInitializer.LINE_ID_INDEX;
 import static team.free.openapitest.init.SubwayStationInfoInitializer.LINE_NAME_INDEX;
@@ -19,7 +23,9 @@ import static team.free.openapitest.init.SubwayStationInfoInitializer.STATION_ID
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "station")
+@Table(name = "station", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"station_latitude", "station_longitude"})
+})
 @Entity
 public class SubwayStation {
 
@@ -47,6 +53,9 @@ public class SubwayStation {
 
     @Column(name = "station_address")
     private String address;
+
+    @OneToMany(mappedBy = "station", cascade = CascadeType.ALL)
+    private List<StationExit> exits;
 
     @Builder
     public SubwayStation(String id, String name, String latitude, String longitude, String lineId, String lineName,

@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import team.free.openapitest.domain.SubwayStation;
 import team.free.openapitest.dto.Location;
 import team.free.openapitest.repository.SubwayStationRepository;
@@ -14,6 +15,7 @@ import team.free.openapitest.util.KakaoAPIManager;
 import java.io.IOException;
 
 @Slf4j
+@Transactional
 @RequiredArgsConstructor
 @Component
 public class SubwayStationInfoInitializer {

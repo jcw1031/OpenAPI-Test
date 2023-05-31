@@ -10,15 +10,19 @@ public class GeographicalDistanceUtils {
     /**
      * @Unit: Meter
      */
-    public double distance(double latitudeA, double longitudeA, double latitudeB, double longitudeB) {
-        if (latitudeA == latitudeB && longitudeA == longitudeB) {
-            return 0;
-        }
+    public double calculateDistance(double latitudeA, double longitudeA, double latitudeB, double longitudeB) {
+        int earthRadius = 6371;
 
-        double theta = longitudeA - longitudeB;
-        double distance = Math.sin(Math.toRadians(latitudeA)) * Math.sin(Math.toRadians(latitudeB))
-                + Math.cos(Math.toRadians(latitudeA)) * Math.cos(Math.toRadians(latitudeB))
-                * Math.cos(Math.toRadians(theta));
-        return distance * 60 * 1.1515 * METER_PER_MILE;
+        double dLat = Math.toRadians(latitudeB - latitudeA);
+        double dLon = Math.toRadians(longitudeB - longitudeA);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(Math.toRadians(latitudeA)) * Math.cos(Math.toRadians(latitudeB)) *
+                        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        double distance = earthRadius * c;
+
+        return distance * 1000;
     }
 }
