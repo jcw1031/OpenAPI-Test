@@ -1,6 +1,7 @@
 package team.free.openapitest.domain;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -45,4 +46,17 @@ public class Elevator {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "station_id")
     private SubwayStation station;
+
+    @Builder
+    public Elevator(String latitude, String longitude, boolean isAvailable, String description) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.isAvailable = isAvailable;
+        this.description = description;
+    }
+
+    public void setStation(SubwayStation station) {
+        this.station = station;
+        station.getElevators().add(this);
+    }
 }

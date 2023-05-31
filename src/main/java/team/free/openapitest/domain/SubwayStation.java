@@ -48,6 +48,9 @@ public class SubwayStation {
     @Column(name = "line_name")
     private String lineName;
 
+    @Column(name = "station_available")
+    private boolean isAvailable;
+
     @Column(name = "operating_institution")
     private String operatingInstitution;
 
@@ -56,6 +59,9 @@ public class SubwayStation {
 
     @OneToMany(mappedBy = "station", cascade = CascadeType.ALL)
     private List<StationExit> exits;
+
+    @OneToMany(mappedBy = "station", cascade = CascadeType.ALL)
+    private List<Elevator> elevators;
 
     @Builder
     public SubwayStation(String id, String name, String latitude, String longitude, String lineId, String lineName,

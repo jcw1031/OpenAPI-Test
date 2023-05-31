@@ -11,7 +11,6 @@ import team.free.openapitest.repository.StationExitRepository;
 import team.free.openapitest.repository.SubwayStationRepository;
 import team.free.openapitest.util.GeographicalDistanceUtils;
 import team.free.openapitest.util.KakaoAPIManager;
-import team.free.openapitest.util.SeoulOpenAPIManager;
 
 import java.util.List;
 
@@ -21,9 +20,7 @@ import java.util.List;
 @Component
 public class StationExitInfoInitializer {
 
-    private final GeographicalDistanceUtils geographicalDistanceUtils;
     private final KakaoAPIManager kakaoAPIManager;
-    private final SeoulOpenAPIManager seoulOpenAPIManager;
     private final SubwayStationRepository stationRepository;
     private final StationExitRepository exitRepository;
 
@@ -46,12 +43,11 @@ public class StationExitInfoInitializer {
     }
 
     private boolean validDistance(SubwayStation station, Location exit) {
-        double distance = geographicalDistanceUtils.calculateDistance(Double.parseDouble(station.getLatitude()), Double.parseDouble(station.getLongitude()),
-                Double.parseDouble(exit.getLatitude()), Double.parseDouble(exit.getLongitude()));
-        if (distance >= 500) {
-            return false;
-        }
+        double distance = GeographicalDistanceUtils.calculateDistance(
+                Double.parseDouble(station.getLatitude()), Double.parseDouble(station.getLongitude()),
+                Double.parseDouble(exit.getLatitude()), Double.parseDouble(exit.getLongitude())
+        );
 
-        return true;
+        return !(distance >= 500);
     }
 }

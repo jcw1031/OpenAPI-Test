@@ -10,7 +10,7 @@ public class GeographicalDistanceUtils {
     /**
      * @Unit: Meter
      */
-    public double calculateDistance(double latitudeA, double longitudeA, double latitudeB, double longitudeB) {
+    public static double calculateDistance(double latitudeA, double longitudeA, double latitudeB, double longitudeB) {
         int earthRadius = 6371;
 
         double dLat = Math.toRadians(latitudeB - latitudeA);

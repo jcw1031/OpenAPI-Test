@@ -6,5 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class StationExitLocationDto {
+public class StationElevatorLocationDto {
+
+
 }

@@ -12,7 +12,7 @@ class ExcelReaderTest {
 
     @Test
     void readTest() throws Exception {
-        Sheet sheet = excelReader.readSheet("/Users/jcw/only2.xlsx");
+        Sheet sheet = excelReader.readSheet("/Users/jcw/station_info_only2.xlsx");
         int columnWidth = sheet.getColumnWidth(0);
         for (Row row : sheet) {
             Cell cell = row.getCell(4);

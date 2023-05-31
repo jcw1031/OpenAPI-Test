@@ -25,6 +25,7 @@ public class SubwayStationInfoInitializer {
     public static final int LINE_NAME_INDEX = 3;
     public static final int STATION_ID_INDEX = 4;
     public static final int STATION_NAME_INDEX = 5;
+    public static final String FILE_PATH = "/Users/jcw/Develop/OpenApiTest/src/main/resources/data/station_info_only2.xlsx";
 
     private final ExcelReader excelReader;
     private final KakaoAPIManager kakaoAPIManager;
@@ -36,7 +37,7 @@ public class SubwayStationInfoInitializer {
     }*/
 
     public void initializeSubwayStationTable() throws IOException {
-        Sheet sheet = excelReader.readSheet("/Users/jcw/only2.xlsx");
+        Sheet sheet = excelReader.readSheet(FILE_PATH);
         int lastRowNum = sheet.getLastRowNum();
 
         for (int i = 1; i <= lastRowNum; i++) {
