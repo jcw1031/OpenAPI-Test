@@ -4,12 +4,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import team.free.openapitest.domain.Elevator;
+import team.free.openapitest.domain.StationExit;
+import team.free.openapitest.domain.SubwayStation;
+import team.free.openapitest.dto.ElevatorStatus;
 import team.free.openapitest.repository.ElevatorRepository;
 import team.free.openapitest.repository.StationExitRepository;
 import team.free.openapitest.repository.SubwayStationRepository;
 import team.free.openapitest.util.SeoulOpenAPIManager;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Transactional
@@ -27,11 +33,28 @@ public class ElevatorStatusInitializer {
     private final SubwayStationRepository stationRepository;
     private final StationExitRepository exitRepository;
     private final ElevatorRepository elevatorRepository;
+    private final Map<Long, String> nearestExit = new HashMap<>();
 
     public void initializeElevatorStatusMapping() {
-        List<String[]> elevatorStatusList = seoulOpenAPIManager.getElevatorStatus();
-        for (String[] elevatorStatus : elevatorStatusList) {
-            System.out.println("elevatorStatus: stationName = " + elevatorStatus[1] + ", where=" + elevatorStatus[2]);
+        List<ElevatorStatus> elevatorStatusList = seoulOpenAPIManager.getElevatorStatus();
+        List<SubwayStation> stations = stationRepository.findAll();
+        for (SubwayStation station : stations) {
+            List<Elevator> elevators = station.getElevators();
+            List<StationExit> exits = station.getExits();
+            setNearestExit(elevators, exits);
         }
+        for (ElevatorStatus elevatorStatus : elevatorStatusList) {
+            System.out.println("elevatorStatus = " + elevatorStatus);
+        }
+    }
+
+    private void setNearestExit(List<Elevator> elevators, List<StationExit> exits) {
+
+    }
+
+    private static String getPureName(String stationName) {
+        int index = stationName.indexOf("(");
+        stationName = stationName.substring(0, index);
+        return stationName;
     }
 }

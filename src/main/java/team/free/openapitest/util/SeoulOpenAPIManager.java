@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import team.free.openapitest.dto.ElevatorStatus;
+import team.free.openapitest.dto.ElevatorStatusDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,36 +43,45 @@ public class SeoulOpenAPIManager {
         return elevators;
     }
 
-    public List<String[]> getElevatorStatus() {
-        List<String[]> statusList = new ArrayList<>();
-        String responseBody = getResponseBody(
-                ELEVATOR_STATUS_REQUEST_ENDPOINT + ELEVATOR_STATUS_REQUEST_SIZE1);
-        setElevatorStatusList(responseBody, statusList);
-        responseBody = getResponseBody(
-                ELEVATOR_STATUS_REQUEST_ENDPOINT + ELEVATOR_STATUS_REQUEST_SIZE2);
-        setElevatorStatusList(responseBody, statusList);
-        responseBody = getResponseBody(
-                ELEVATOR_STATUS_REQUEST_ENDPOINT + ELEVATOR_STATUS_REQUEST_SIZE3);
-        setElevatorStatusList(responseBody, statusList);
+    public List<ElevatorStatus> getElevatorStatus() {
+        List<ElevatorStatus> statusList = new ArrayList<>();
+        List<ElevatorStatus> elevatorStatusList = getResponseBodyObject(
+                ELEVATOR_STATUS_REQUEST_ENDPOINT + ELEVATOR_STATUS_REQUEST_SIZE1)
+                .getElevatorStatusRow().getElevatorStatusList();
+        setElevatorStatusList(elevatorStatusList, statusList);
+        elevatorStatusList = getResponseBodyObject(
+                ELEVATOR_STATUS_REQUEST_ENDPOINT + ELEVATOR_STATUS_REQUEST_SIZE2)
+                .getElevatorStatusRow().getElevatorStatusList();
+        setElevatorStatusList(elevatorStatusList, statusList);
+        elevatorStatusList = getResponseBodyObject(
+                ELEVATOR_STATUS_REQUEST_ENDPOINT + ELEVATOR_STATUS_REQUEST_SIZE3)
+                .getElevatorStatusRow().getElevatorStatusList();
+        setElevatorStatusList(elevatorStatusList, statusList);
 
         return statusList;
     }
 
-    private void setElevatorStatusList(String responseBody, List<String[]> statusList) {
-        String[] statusListString = convertJsonToArray(responseBody);
-        for (String statusString : statusListString) {
-            String[] status = statusString.replaceAll("\"", "").split(",");
-            if (status[6].split(":")[1].equals("EV") && status[2].contains("외부")) {
-                statusList.add(status);
+    private void setElevatorStatusList(List<ElevatorStatus> elevatorStatusList, List<ElevatorStatus> statusList) {
+        System.out.println("elevatorStatusList.size() = " + elevatorStatusList.size());
+        for (ElevatorStatus elevatorStatus : elevatorStatusList) {
+            if (elevatorStatus.getCategory().equals("EV")) {
+                if (elevatorStatus.getElevatorName().contains("외부") || elevatorStatus.getLocation().contains("출")) {
+                    statusList.add(elevatorStatus);
+                }
             }
         }
     }
 
-    private String getResponseBody(String elevatorLocationRequestEndpoint) {
-        String url = SEOUL_API_HOST + authenticationKey + RESPONSE_TYPE + elevatorLocationRequestEndpoint;
+    private String getResponseBody(String endpoint) {
+        String url = SEOUL_API_HOST + authenticationKey + RESPONSE_TYPE + endpoint;
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
         String responseBody = responseEntity.getBody();
         return responseBody;
+    }
+
+    private ElevatorStatusDto getResponseBodyObject(String endpoint) {
+        String url = SEOUL_API_HOST + authenticationKey + RESPONSE_TYPE + endpoint;
+        return restTemplate.getForObject(url, ElevatorStatusDto.class);
     }
 
     private String[] convertJsonToArray(String jsonString) {

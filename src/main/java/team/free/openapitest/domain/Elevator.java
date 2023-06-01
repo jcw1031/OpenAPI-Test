@@ -62,4 +62,8 @@ public class Elevator {
         this.station = station;
         station.getElevators().add(this);
     }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
