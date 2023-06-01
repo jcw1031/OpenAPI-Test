@@ -29,6 +29,9 @@ public class RemoteController {
 
     @GetMapping("/elevator-init")
     public void elevatorInitialize() throws IOException {
+        long startTime = System.nanoTime();
         stationElevatorInfoInitializer.initializeElevatorLocationInfo();
+        long endTime = System.nanoTime();
+        System.out.println("Duration = " + (endTime - startTime));
     }
 }

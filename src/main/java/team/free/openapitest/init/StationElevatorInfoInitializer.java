@@ -11,7 +11,10 @@ import team.free.openapitest.repository.SubwayStationRepository;
 import team.free.openapitest.util.GeographicalDistanceUtils;
 import team.free.openapitest.util.SeoulOpenAPIManager;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Transactional
@@ -28,18 +31,21 @@ public class StationElevatorInfoInitializer {
     private final SeoulOpenAPIManager seoulOpenAPIManager;
     private final SubwayStationRepository stationRepository;
     private final ElevatorRepository elevatorRepository;
+    private final Map<String, List<String[]>> elevatorMap = new HashMap<>();
+
 
     public void initializeElevatorLocationInfo() {
         List<String[]> elevators = seoulOpenAPIManager.getStationElevatorLocation();
+        setElevatorMap(elevators);
         List<SubwayStation> stations = stationRepository.findAll();
         for (SubwayStation station : stations) {
-            mappingStationAndElevator(elevators, station);
+            mappingStationAndElevator(station);
         }
     }
 
-    private void mappingStationAndElevator(List<String[]> elevators, SubwayStation station) {
-        for (String[] elevatorInfo : elevators) {
-            String[] stationName = elevatorInfo[STATION_NAME_INDEX].split(":");
+    private void setElevatorMap(List<String[]> elevators) {
+        for (String[] elevator : elevators) {
+            String[] stationName = elevator[STATION_NAME_INDEX].split(":");
             if (stationName.length == 1) {
                 continue;
             }
@@ -47,11 +53,37 @@ public class StationElevatorInfoInitializer {
             String name = stationName[VALUE_INDEX];
             if (name.contains("(")) {
                 name = getPureName(name);
+                if (name.isBlank()) {
+                    continue;
+                }
             }
 
+            List<String[]> elevatorValue = elevatorMap.get(name);
+            if (elevatorValue == null) {
+                elevatorValue = new ArrayList<>();
+                elevatorValue.add(elevator);
+                elevatorMap.put(name, elevatorValue);
+                continue;
+            }
+
+            elevatorValue.add(elevator);
+            elevatorMap.put(name, elevatorValue);
+        }
+
+        System.out.println("elevatorMap = " + elevatorMap);
+    }
+
+    private void mappingStationAndElevator(SubwayStation station) {
+        String stationName = station.getName();
+        List<String[]> elevators = elevatorMap.get(stationName);
+        if (elevators == null) {
+            return;
+        }
+
+        for (String[] elevatorInfo : elevators) {
             String elevatorCoordinate = elevatorInfo[ELEVATOR_COORDINATE_INDEX].split(":")[VALUE_INDEX];
             String[] coordinate = getPureCoordinate(elevatorCoordinate);
-            if (validStationName(station, name) && validDistance(station, coordinate)) {
+            if (validDistance(station, coordinate)) {
                 Elevator elevator = Elevator.builder()
                         .latitude(coordinate[LATITUDE_INDEX])
                         .longitude(coordinate[LONGITUDE_INDEX])
@@ -71,10 +103,6 @@ public class StationElevatorInfoInitializer {
     private String[] getPureCoordinate(String elevatorCoordinate) {
         String coordinate = elevatorCoordinate.substring(6, elevatorCoordinate.length() - 1);
         return coordinate.split(" ");
-    }
-
-    private boolean validStationName(SubwayStation station, String stationName) {
-        return !stationName.isBlank() && stationName.equals(station.getName());
     }
 
     private boolean validDistance(SubwayStation station, String[] coordinate) {
