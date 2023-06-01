@@ -34,4 +34,9 @@ public class RemoteController {
         long endTime = System.nanoTime();
         System.out.println("Duration = " + (endTime - startTime));
     }
+
+    @GetMapping("/contact-init")
+    public void initializeStationContact() throws IOException {
+        subwayStationInfoInitializer.setSubwayStationContact();
+    }
 }

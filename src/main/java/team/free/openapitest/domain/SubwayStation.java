@@ -57,6 +57,9 @@ public class SubwayStation {
     @Column(name = "station_address")
     private String address;
 
+    @Column(name = "station_contact")
+    private String contact;
+
     @OneToMany(mappedBy = "station", cascade = CascadeType.ALL)
     private List<StationExit> exits;
 
@@ -91,5 +94,9 @@ public class SubwayStation {
                 .operatingInstitution(operatingInstitution)
                 .address(location.getAddress())
                 .build();
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }
